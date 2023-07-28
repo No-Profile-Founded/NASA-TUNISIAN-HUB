@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <a class ="fl" href="firstpage.html" ><img src="../img/basiclogo.png" ></a>
+        <div class="nav-links" id="navLinks">
+           <i class="fa fa-times" onclick="hideMenu()"></i>
+           <ul>
+            <li><a href="../html/firstpage.html">HOME</a></li>
+            <li><a href="../html/galleries.html">GALLERIES</a></li>
+            <li><a href="../html/S_articles.html">S_ARTICLES</a></li>
+            <li><a href="../html/forum.html">FORUM</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+            <li><a href="trysign.html">SIGN IN</a></li>
+        </ul>
+
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    
+    <div class="formulaire">
+        <label class="lab" for="username">Username:</label>
+        <input class="lab" type="text" id="username" />
+        <label class="lab"for="message">Message:</label>
+        <textarea id="message"></textarea>
+        <button onclick="postMessage()">Post</button>
+    </div>
+    <div>
+        <h2 class="lab2">Messages:</h2>
+        <ul class="lab2" id="messageList"></ul>
+    </div>
+    <script>
+        // Array to store messages
+const messages = [];
+
+// Function to add a new message to the array and update the message list
+function postMessage() {
+  const usernameInput = document.getElementById('username');
+  const messageInput = document.getElementById('message');
+
+  const username = usernameInput.value.trim();
+  const message = messageInput.value.trim();
+
+  if (username === '' || message === '') {
+    alert('Please enter a username and message.');
+    return;
+  }
+
+  const newMessage = {
+    username: username,
+    message: message,
+    timestamp: new Date().toLocaleString() // Add a timestamp to the message
+  };
+
+  messages.push(newMessage);
+
+  // Clear input fields
+  usernameInput.value = '';
+  messageInput.value = '';
+
+  // Update the message list
+  updateMessageList();
+}
+
+// Function to update the message list with the current messages
+function updateMessageList() {
+  const messageList = document.getElementById('messageList');
+  messageList.innerHTML = '';
+
+  for (const message of messages) {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<strong>${message.username}:</strong> ${message.message} (${message.timestamp})`;
+    messageList.appendChild(listItem);
+  }
+}
+
+// Initial update of the message list
+updateMessageList();
+
+      </script>
+    
+</body>
+</html>

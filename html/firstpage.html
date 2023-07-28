@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="bg">
+        <nav>
+            <a class ="fl" href="firstpage.html" ><img src="../img/basiclogo.png" ></a>
+            <div class="nav-links" id="navLinks">
+                <h1><i class="fa fa-times" onclick="hideMenu()"></i></h1>
+                <ul>
+                    <li><a href="../html/firstpage.html">HOME</a></li>
+                    <li><a href="../html/galleries.html">GALLERIES</a></li>
+                    <li><a href="../html/S_articles.html">S_ARTICLES</a></li>
+                    <li><a href="../html/forum.html">FORUM</a></li>
+                    <li><a href="contactus.html">CONTACT US</a></li>
+                    <li><a href="trysign.html">SIGN IN</a></li>
+                </ul>
+
+            </div>
+            <h1><i class="fa fa-bars" onclick="showMenu()"></i></h1>
+        </nav>
+    <div class = "text-box">
+        <h1>NASA</h1>
+        <p>NASA stands for National Aeronautics and Space Administration.<br> NASA is a U.S. government agency that is responsible for science and technology related to air and space.</p>
+        <a href ="firstpage.html" class ="hero-btn">visit to know more</a>
+
+    </div>
+
+    </section>
+    <section class ="course">
+        <h1 class="k">HISTORY</h1>
+        <div class="row">
+            <div class="course-col">
+                <h3>Who Created NASA</h3>
+                <p>Dwight David "Ike" Eisenhower was an American military officer and statesman who served as the 34th president of the United States from 1953 to 1961. During World War II, he served as Supreme Commander of the Allied Expeditionary Force in Europe and achieved the five-star rank as General of the Army.</p>
+            </div>
+            <div class="course-col">
+                <h3>What Is The Goal Of The NASA</h3>
+                <p>Vision: Exploring the secrets of the universe for the benefit of all. Mission: NASA explores the unknown in air and space, innovates for the benefit of humanity, and inspires the world through discovery</p>
+            </div>
+            <div class="course-col">
+                <h3>How To Work In NASA</h3>
+                <p>To apply for a job at NASA, go to http://www.usajobs.gov/. There you'll find the very latest job listings and information that will help you determine if you qualify for the position. NASA prefers to hire applicants with applicable university degrees, or those in the military with aviation experience and backgrounds.
+                 </p>
+            </div>
+
+        </div>
+
+    <section class ="cta">
+        <h1>Nasa Tunisian Hub</h1>
+        <a href=" " class ="hero-btn" > contact us</a>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function showMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script> 
+    <img class="mp" src="../img/map1.png" alt="map">
+</body>
+</html>

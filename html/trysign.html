@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+</head>
+<body>
+    <nav>
+        <a class ="fl" href="firstpage.html" ><img src="../img/basiclogo.png" ></a>
+        <div class="nav-links" id="navLinks">
+           <i class="fa fa-times" onclick="hideMenu()"></i>
+           <ul>
+            <li><a href="../html/firstpage.html">HOME</a></li>
+            <li><a href="../html/galleries.html">GALLERIES</a></li>
+            <li><a href="../html/S_articles.html">S_ARTICLES</a></li>
+            <li><a href="../html/forum.html">FORUM</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+            <li><a href="trysign.html">SIGN IN</a></li>
+        </ul>
+
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="hero0">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">LOG IN</button>
+                <button type="button" class="toggle-btn" onclick="signin()"> REGISTER</button>
+
+            </div>
+            <div class="social-icons">
+                <img src="../img/fb.png">
+                <img src="../img/tw.png">
+                <img src="../img/gp.png">
+    
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <form id="signin" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="text" class="input-field" placeholder="Email Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>I Agree To The Terms & Conditions</span>
+                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("signin");
+        var z = document.getElementById("btn");
+        function signin(){
+            x.style.left ="-400px";
+            y.style.left ="50px";
+            z.style.left ="110px";
+        }
+        function login(){
+            x.style.left ="50px";
+            y.style.left ="450px";
+            z.style.left ="0";
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S_articles</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <a class ="fl" href="firstpage.html" ><img src="../img/basiclogo.png" ></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="../html/firstpage.html">HOME</a></li>
+                <li><a href="../html/galleries.html">GALLERIES</a></li>
+                <li><a href="../html/S_articles.html">S_ARTICLES</a></li>
+                <li><a href="../html/forum.html">FORUM</a></li>
+                <li><a href="contactus.html">CONTACT US</a></li>
+                <li><a href="trysign.html">SIGN IN</a></li>
+            </ul>
+    
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    <div>
+       <div>
+        <h1 class ="es">
+          I  Mars
+        </h1>
+        <img class="imgs" src="../img/marsimg.jpg" alt="marsimage">
+        <p class ="es">Mars is the fourth planet and the furthest terrestrial planet from the Sun. The reddish color of its surface is due to finely grained iron(III) oxide dust in the soil, giving it the nickname "the Red Planet". Mars's radius is second smallest among the planets in the Solar System at 3,389.5 km</p>
+        <a href="../img/Mars.pdf" id="pdfLink1"><img class="fck" src="../img/view.png" alt="view"></a>
+       </div>
+       <div>
+        <h1 class ="es">
+          II Artemis
+        </h1>
+        <img class="imgs" src="../img/artemis.jpg" alt="marsimage">
+        <p class ="es">Artemis is the twin sister of Apollo and goddess of the Moon in Greek mythology.</p>
+        <a href="../img/artemis.pdf" id="pdfLink2"><img class="fck" src="../img/view.png" alt="view"></a>
+       </div>
+       <div>
+        <h1 class ="es">
+          III earth
+        </h1>
+        <img class="imgs" src="../img/earthimg.jpg" alt="marsimage">
+        <p class ="es">Earth is a terrestrial or inner planet consisting of a thin outer crust, an intermediate mantle, and a dense inner core.</p>
+        <a href="../img/earth.pdf" id="pdfLink3"><img class="fck" src="../img/view.png" alt="view"></a>
+       </div>
+       <div>
+        <h1 class ="es">
+          IV Hubble 
+        </h1>
+        <img class="imgs" src="../img/hubble.jpg" alt="marsimage">
+        <p class ="es">Edwin Powell Hubble was an American astronomer. He played a crucial role in establishing the fields of extragalactic astronomy and observational cosmology. Hubble proved that many objects previously thought to be clouds of dust and gas and classified as "nebulae" were actually galaxies beyond the Milky Way</p>
+        <a href="../img/hubble.pdf" id="pdfLink4"><img class="fck" src="../img/view.png" alt="view"></a>
+       </div>
+       <div>
+        <h1 class ="es">
+          V James Web 
+        </h1>
+        <img class="imgs" src="../img/jamesweb.jpg" alt="marsimage">
+        <p class ="es">The James Webb Space Telescope is the largest space telescope, made to conduct infrared astronomy. Its high-resolution and high-sensitivity instruments allow it to view objects too old, distant, or faint for the Hubble Space Telescope.</p>
+       </div>
+       <div>
+        <h1 class ="es">
+          VI Moon
+        </h1>
+        <img class="imgs" src="../img/moon.jpg" alt="marsimage">
+        <p class ="es">A natural satellite is, in the most common usage, an astronomical body that orbits a planet, dwarf planet, or small Solar System body. Natural satellites are colloquially referred to as moons, a derivation from the Moon of Earth</p>
+        <a href="../img/moon.pdf" id="pdfLink6"><img class="fck" src="../img/view.png" alt="view"></a>
+        <div>
+          <h1 class ="es">
+            VII Sun
+          </h1>
+          <img class="imgs" src="../img/sun.pdf" alt="marsimage">
+          <p class ="es">The Sun is a 4.5 billion-year-old yellow dwarf star – a hot glowing ball of hydrogen and helium – at the center of our solar system. It's about 93 million miles (150 million kilometers) from Earth and it's our solar system's only star. Without the Sun's energy, life as we know it could not exist on our home planet.</p>
+          <a href="../img/sun.pdf" id="pdfLink7"><img class="fck" src="../img/view.png" alt="view"></a>
+         </div>
+       </div>
+    </div>
+        
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js">
+        document.addEventListener('DOMContentLoaded', function () {
+// Add a click event listener to the PDF link
+document.getElementById('pdfLink1').addEventListener('click', function (event) {
+event.preventDefault(); // Prevent the default behavior of opening the link
+
+var pdfLink = this.getAttribute('href');
+
+// Fetch the PDF file using PDF.js
+PDFJS.getDocument(pdfLink).promise.then(function (pdf) {
+  // Assuming the PDF file has only one page; you can iterate through all the pages if needed
+  pdf.getPage(1).then(function (page) {
+    var scale = 1.5;
+    var viewport = page.getViewport({ scale: scale });
+
+    // Prepare the canvas
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    document.body.appendChild(canvas);
+
+    // Render the PDF page to the canvas
+    page.render({
+      canvasContext: context,
+      viewport: viewport
+    });
+  });
+});
+});
+});
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js">
+        document.addEventListener('DOMContentLoaded', function () {
+// Add a click event listener to the PDF link
+document.getElementById('pdfLink2').addEventListener('click', function (event) {
+event.preventDefault(); // Prevent the default behavior of opening the link
+
+var pdfLink = this.getAttribute('href');
+
+// Fetch the PDF file using PDF.js
+PDFJS.getDocument(pdfLink).promise.then(function (pdf) {
+  // Assuming the PDF file has only one page; you can iterate through all the pages if needed
+  pdf.getPage(1).then(function (page) {
+    var scale = 1.5;
+    var viewport = page.getViewport({ scale: scale });
+
+    // Prepare the canvas
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    document.body.appendChild(canvas);
+
+    // Render the PDF page to the canvas
+    page.render({
+      canvasContext: context,
+      viewport: viewport
+    });
+  });
+});
+});
+});
+
+    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js">
+          document.addEventListener('DOMContentLoaded', function () {
+  // Add a click event listener to the PDF link
+  document.getElementById('pdfLink3').addEventListener('click', function (event) {
+  event.preventDefault(); // Prevent the default behavior of opening the link
+  
+  var pdfLink = this.getAttribute('href');
+  
+  // Fetch the PDF file using PDF.js
+  PDFJS.getDocument(pdfLink).promise.then(function (pdf) {
+    // Assuming the PDF file has only one page; you can iterate through all the pages if needed
+    pdf.getPage(1).then(function (page) {
+      var scale = 1.5;
+      var viewport = page.getViewport({ scale: scale });
+  
+      // Prepare the canvas
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      document.body.appendChild(canvas);
+  
+      // Render the PDF page to the canvas
+      page.render({
+        canvasContext: context,
+        viewport: viewport
+      });
+    });
+  });
+  });
+  });
+  
+      </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js">
+              document.addEventListener('DOMContentLoaded', function () {
+      // Add a click event listener to the PDF link
+      document.getElementById('pdfLink4').addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the default behavior of opening the link
+      
+      var pdfLink = this.getAttribute('href');
+      
+      // Fetch the PDF file using PDF.js
+      PDFJS.getDocument(pdfLink).promise.then(function (pdf) {
+        // Assuming the PDF file has only one page; you can iterate through all the pages if needed
+        pdf.getPage(1).then(function (page) {
+          var scale = 1.5;
+          var viewport = page.getViewport({ scale: scale });
+      
+          // Prepare the canvas
+          var canvas = document.createElement('canvas');
+          var context = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          document.body.appendChild(canvas);
+      
+          // Render the PDF page to the canvas
+          page.render({
+            canvasContext: context,
+            viewport: viewport
+          });
+        });
+      });
+      });
+      });
+      
+          </script>
+</body>
+</html>
